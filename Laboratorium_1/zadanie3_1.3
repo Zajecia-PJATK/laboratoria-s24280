@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+class Main {
+    static int max_rec(ArrayList<Integer> numbers){
+        if (numbers.size() > 1){
+            if (numbers.get(0) > numbers.get(1)){
+                numbers.remove(1);
+                return max_rec(numbers);
+            }
+            else {
+                numbers.remove(0);
+                return max_rec(numbers);
+            }
+        } else {
+            return numbers.get(0);
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        int wynik;
+        String liczby = scanner.nextLine();
+        String[] nums = liczby.split(" ");
+
+        for(int i = 0; i < nums.length; i++) {
+            list.add(Integer.parseInt(nums[i]));
+        }
+        wynik = max_rec(list);
+        System.out.print(wynik);
+    }
+}
