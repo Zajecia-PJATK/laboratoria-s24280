@@ -1,0 +1,36 @@
+import java.io.IOException;
+import java.util.*;
+
+class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        long sekundy = scanner.nextLong();
+        String planeta = scanner.next();
+
+        double wynik = wiekNaPlanecie(sekundy, planeta);
+        System.out.printf("%.2f", wynik);
+    }
+
+    public static double wiekNaPlanecie(long czas, String miejsce) {
+            double eAge = (double) czas/31557600;
+        if (miejsce.equals("Ziemia")) {
+            return  eAge;
+        } else if (miejsce.equals("Merkury")) {
+            return eAge / 0.2408467;
+        } else if (miejsce.equals("Wenus")) {
+            return eAge / 0.61519726;
+        } else if (miejsce.equals("Mars")) {
+            return eAge / 1.8808158;
+        } else if (miejsce.equals("Jowisz")) {
+            return eAge / 11.862615;
+        } else if (miejsce.equals("Saturn")) {
+            return eAge / 29.447498;
+        } else if (miejsce.equals("Uran")) {
+            return eAge / 84.016846;
+        } else if (miejsce.equals("Neptun")) {
+            return eAge / 164.79132;
+        }
+        return 0;
+    }
+}
