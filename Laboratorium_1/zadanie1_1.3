@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.util.HashSet;
+class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        String tekst = scanner.nextLine();
+
+        if (isPangramm(tekst) == true) {
+            System.out.print("true");
+        } else {
+            System.out.print("false");
+        }
+
+    }
+
+    static boolean isPangramm(String zdanie) {
+        zdanie = zdanie.toLowerCase().replaceAll(" ", "");
+        if (zdanie.length() < 26) {
+            return false;
+        }
+        char[] tablica = zdanie.toCharArray();
+
+        for (int i = 0; i < zdanie.length(); i++) {
+            boolean flag = Character.isLetter(zdanie.charAt(i));
+            if (flag == false) {
+                return true;
+            }
+        }
+        HashSet<Character> set = new HashSet<>();
+        for (char ch : tablica) {
+            set.add(ch);
+        }
+
+        if (set.size() >= 26) {
+            return true;
+        } else return false;
+    }
+}
