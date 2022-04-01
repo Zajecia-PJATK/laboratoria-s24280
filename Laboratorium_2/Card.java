@@ -25,13 +25,13 @@ class Card {
 
 class Main {
     public static void main(String[] args) {
-        Card karta1 = new Card(karta_numer.JEDYNKA, karta_znak.KARO);
+        Card karta1 = new Card(karta_numer.CZWÓRKA, karta_znak.KIER);
         System.out.println(karta1);
 
         Card karta2 = new Card(karta_numer.AS, karta_znak.TREFL);
         System.out.println(karta2);
 
-        Card karta3 = new Card(karta_numer.ÓSEMKA, karta_znak.PIK);
+        Card karta3 = new Card(karta_numer.KRÓLOWA, karta_znak.PIK);
         System.out.println(karta3);
     }
 }
