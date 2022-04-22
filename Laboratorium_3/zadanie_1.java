@@ -1,0 +1,41 @@
+class Account {
+    public String id;
+    public String name;
+    public int balance = 0;
+
+    public Account(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Account (String id, String name, int balance) {
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
+    }
+
+    public String getID() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void credit(int amount) {
+        this.balance += amount;
+    }
+
+    public void debit (int amount) {
+        if (amount <= this.balance) {
+            this.balance = this.balance - amount;
+        }
+    }
+      public String toString() {
+      return "Account[id=" + getID() + ",name=" + getName() + ",balance=" + getBalance() + "]";
+    }
+}
