@@ -1,0 +1,14 @@
+W relacji dziedziczenia ogólna klasa jest nazywana 
+bazową
+
+Do informowania, że klasa dziedziczy po innej klasie, służy słowo kluczowe 
+extends
+
+Słowo kluczowe 
+super 
+wskazuje obiekt klasy bazowej.
+Metoda klasy pochodnej o tej samej sygnaturze co metoda klasy bazowej nazywamy 
+przesłanianiem
+
+Do definiowania abstrakcyjnej klasy należy użyć słowa kluczowego 
+abstract
