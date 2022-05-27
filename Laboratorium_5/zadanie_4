@@ -1,0 +1,11 @@
+Pola w interfejsie mają modyfikator 
+final
+
+Do definiowania anonimowej klasy wewnętrznej służy operator 
+new
+
+Interfejs funkcyjny ma tylko jedną 
+metodę abstrakcyjną
+
+Wyrażenie lambda można wykorzystać do tworzenia obiektu zawierającego implementację 
+interfejsu funkcyjnego
