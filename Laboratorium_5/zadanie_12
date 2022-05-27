@@ -1,0 +1,61 @@
+public interface Value {
+    public void increaseValue();
+    public void decreaseValue();
+}
+public interface Number {
+    public void add();
+    public void substract();
+}
+public interface interfejsImplementujacy extends Value, Number {
+    public void dodatkowaMetoda();
+}
+public class Klasa implements interfejsImplementujacy {
+
+    public static void metoda1(Value v) {
+        System.out.println("to jest objekt z klasy Klasa interfejsu Value");
+    }
+    public static void metoda2(Number n) {
+        System.out.println("to jest obiekt klasy Klasa interfejsu Number");
+    }
+    public static void metoda3(interfejsImplementujacy i){
+        System.out.println("to jest obiekt klasy Klasa interfejsu interfejsImplementujacy, który dziedziczy po interfejsach Number i Value");
+    }
+    @Override
+    public void add() {
+
+    }
+
+    @Override
+    public void substract() {
+
+    }
+
+    @Override
+    public void increaseValue() {
+
+    }
+
+    @Override
+    public void decreaseValue() {
+
+    }
+
+    @Override
+    public void dodatkowaMetoda() {
+
+    }
+}
+import static com.company.Klasa.metoda1;
+import static com.company.Klasa.metoda2;
+import static com.company.Klasa.metoda3;
+
+public class Main {
+    public static void main(String[] args) {
+        Klasa klasa1 = new Klasa();
+        Klasa klasa2 = new Klasa();
+        Klasa klasa3 = new Klasa();
+        metoda1(klasa1);
+        metoda2(klasa2);
+        metoda3(klasa3);
+    }
+}
