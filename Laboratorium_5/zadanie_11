@@ -1,0 +1,121 @@
+import java.util.Arrays;
+
+public class CourseGrades implements Analyzable, Comparable<CourseGrades> {
+    private double score;
+
+    public CourseGrades() {
+    }
+
+    public void setScore(double s) {
+        score = s;
+    }
+
+    public double getScore()
+    {
+        return score;
+    }
+
+    public char getGrade(){
+        char letterGrade;
+        if (score >= 90)
+            letterGrade = '5';
+        else if (score >= 80)
+            letterGrade = '4';
+        else if (score >= 70)
+            letterGrade = '3';
+        else if (score >= 60)
+            letterGrade = '2';
+        else
+            letterGrade = '1';
+        return letterGrade;
+    }
+
+    private CourseGrades grades[];
+
+    @Override
+    public double getAverage() {
+        double average = 0;
+        int sum=0;
+        for (int i = 0; i <= grades.length - 1; i++){
+            sum += grades[i].getScore();
+        }
+        average = sum/grades.length;
+        return average;
+    }
+
+    @Override
+    public CourseGrades getHighest() {
+        double max=0;
+        int h=0;
+        for(int i = 0; i <= grades.length - 1; i++){
+            if(grades[i].getScore()>max){
+                max = grades[i].getScore();
+                h = i;
+            }
+        }
+        return grades[h];
+    }
+
+    @Override
+    public CourseGrades getLowest() {
+        double low = grades[0].getScore();
+        int l = 0;
+        for(int i = 1; i <= grades.length-1; i++){
+            if(grades[i].getScore() < low){
+                low = grades[i].getScore();
+                l = i;
+            }
+        }
+        return grades[l];
+    }
+
+    public CourseGrades[] getGrades() {
+        return grades;
+    }
+
+    public void setGrades(CourseGrades[] grades) {
+        this.grades = grades;
+    }
+
+    public CourseGrades(CourseGrades[] grades) {
+        this.grades = grades;
+    }
+
+    @Override
+    public String toString() {
+        return "CourseGrades{" +
+                "grades=" + Arrays.toString(grades) +
+                '}';
+    }
+
+    @Override
+    public int compareTo(CourseGrades o) {
+        if (this.score == o.score) {
+            return 0;
+        } else if (this.score > o.score) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+}
+class Main{
+    public static void main(String[] args) {
+        CourseGrades a = new CourseGrades();
+        CourseGrades b = new CourseGrades();
+        CourseGrades c = new CourseGrades();
+        CourseGrades d = new CourseGrades();
+        a.setScore(182);
+        b.setScore(12);
+        c.setScore(200);
+        d.setScore(5.49);
+
+        CourseGrades c1 = new CourseGrades(new CourseGrades[]{a,b,c,d});
+
+        System.out.println(c1.getAverage());
+        System.out.println(c1.getLowest().getScore());
+        System.out.println(c1.getHighest().getScore());
+        System.out.println(a.compareTo(c));
+
+    }
+}
