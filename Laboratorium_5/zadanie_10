@@ -1,0 +1,65 @@
+public class zadanie10 {
+    public interface interfejs_1 {
+        void one();
+    }
+
+    public interface interfejs_2 {
+        int two(int a, int b, int c);
+    }
+
+    public interface interfejs_3 {
+        void three(int a);
+    }
+
+    public interface interfejs_4 {
+        int four(int a, int b, int c);
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+
+            interfejs_1 a = () -> System.out.println("ahoj");
+            a.one();
+
+            interfejs_2 b = (int x, int y, int z) -> (x * y - z);
+            System.out.println(b.two(20, 4, 6));
+
+            interfejs_3 c = g -> System.out.println(g);
+            c.three(1);
+
+            interfejs_4 d = (int f, int s, int t) -> {
+                int p = f - s;
+                int k = s - t;
+                int o = t - f;
+                int x = f * s * t;
+                int suma = p + k + o;
+                return suma * x;
+            };
+            System.out.println(d.four(21, 3, 7));
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        zadanie10.interfejs_1 a = () -> System.out.println("ahoj");
+        a.one();
+
+        zadanie10.interfejs_2 b = (int x, int y, int z) -> (x * y - z);
+        System.out.println(b.two(20, 4, 6));
+
+        zadanie10.interfejs_3 c = g -> System.out.println(g);
+        c.three(1);
+
+        zadanie10.interfejs_4 d = (int f, int s, int t) -> {
+            int p = f + s;
+            int k = s - t;
+            int o = f / t;
+            int x = f * s * t;
+            int suma = p + k + o;
+            return suma * x;
+        };
+        System.out.println(d.four(21, 3, 7));
+    }
+}
