@@ -1,0 +1,14 @@
+Gdy wyjątek jest generowany, mówi się, że jest 
+zgłoszony
+
+Fragment kodu, który w kontrolowany sposób reaguje na wyjątki, to 
+blok obsługi wyjątków
+
+Wszystkie klasy wyjątków dziedziczą po klasie 
+Throwable
+
+Metoda, którą można wykorzystać do pobierania komunikatów o błędach z obiektu wyjątku to 
+getMessage
+
+Do ręcznego zgłaszania wyjątków można wykorzystać instrukcję 
+throw
