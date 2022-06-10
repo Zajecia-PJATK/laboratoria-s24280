@@ -1,0 +1,4 @@
+
+W liście dwukierunkowej operacje wstawiania oraz usuwania działa szybciej niż w klasie ArrayList
+
+Nie musisz przechwytywać wyjątków dziedziczących po klasie RuntimeException
