@@ -1,0 +1,19 @@
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+ class Main {
+     public static void main(String[] args) {
+
+         int[] tab = {1, 2, 3};
+         int i = 3;
+
+         try 
+         {
+             System.out.print("Twoja liczba to: " + tab[i]);
+         }
+         catch (Exception e) 
+         {
+             System.out.print("Elementu nie znaleziono.");
+         }
+     }
+ }
