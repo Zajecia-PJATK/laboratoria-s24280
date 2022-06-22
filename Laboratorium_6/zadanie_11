@@ -1,0 +1,21 @@
+class Wyjatek extends Exception {
+
+    public Wyjatek(String wiadomosc) {
+        super();
+    }
+
+    public Wyjatek() {
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        int aaa = 25;
+        try {
+            if (aaa==25) {
+                throw new Wyjatek("Tak nie mozna!");
+            }
+        } catch (Wyjatek e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
